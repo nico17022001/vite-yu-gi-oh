@@ -1,8 +1,8 @@
 
 <script>
-import Footer from '../src/components/Footer.vue';
-import Header from '../src/components/Header.vue';
-import Main from '../src/components/Main.vue';
+import Footer from './components/Footer.vue';
+import Header from './components/Header.vue';
+import Main from './components/Main.vue';
 
 export default {
   components:{
@@ -14,7 +14,9 @@ export default {
 </script>
 
 <template>
-  
+  <Header/>
+  <Main/>
+  <Footer/>
 </template>
 
 <style>
