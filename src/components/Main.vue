@@ -14,6 +14,12 @@ export default {
   components:{
     CardContainer,
     Select,
+  },
+
+  methods:{
+    callApi(){
+      this.$emit('callApi')
+    } 
   }
 }
 
@@ -24,14 +30,14 @@ export default {
   <!-- CONTENITORE CON SFONDO -->
   <div id="main-wrapper">
     <!-- SELECT -->
-    <Select/>
+    <Select @changeType='callApi'/>
     <!-- CONTENITORE BIANCO -->
     <div id="white-container">
       <!-- CONTENITORE DELLA LISTA DI CARDS -->
       <div id="container">
         <!-- CONTENITORE CARTE TROVATE -->
         <div id="cards-founds">
-          Found 39 cards
+          Le Carte trovate sono {{ store.arrayFull.length }}
         </div>
         <CardContainer/> 
       </div>

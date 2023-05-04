@@ -13,7 +13,7 @@ export default {
 
 <template>
   <!-- CARTA -->
-  <div class="carta">
+  <div class="carta" v-if="type === type">
     <div class="carta-img">
     <!-- IMMAGINE CARTA -->
       <img :src="img" :alt="name">

@@ -27,26 +27,38 @@ export default {
     getApi(){
       axios.get(store.apiUrl,{
         params:{
-          num:10,
+          num:20,
           offset: 0,
+          type: store.cardType,
         }
       })
       .then(result => {
         store.listaCarte = result.data.data;
+        this.contatoreFound()
       })
-    }
+    },
+
+    contatoreFound(){
+      axios.get(store.apiUrl,{
+        params:{
+          type: store.cardType,
+        }
+    })
+    .then(result => { 
+      store.arrayFull = result.data.data
+    })
+  }
   },
 
   mounted(){
     this.getApi()
   }
-
 }
 </script>
 
 <template>
   <Header/>
-  <Main/>
+  <Main @callApi="getApi"/>
   <Footer/>
 </template>
 
