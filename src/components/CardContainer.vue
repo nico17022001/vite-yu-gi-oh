@@ -1,7 +1,7 @@
 
 <script>
-import {store} from '../data/store'
 import  Card from '../components/Card.vue'
+import {store} from '../data/store'
 
 export default {
 
@@ -23,18 +23,13 @@ export default {
 <template>
   <!-- CONTENITORE CARTE -->
   <div id="cards-container">
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
-    <Card/>
+    <Card
+      v-for="card in store.listaCarte"
+      :key="card.id"
+      :name="card.name"
+      :type="card.type"
+      :img= "card.card_images[0].image_url"/>
   </div>
-  
 </template>
 
 <style lang="scss" scoped>

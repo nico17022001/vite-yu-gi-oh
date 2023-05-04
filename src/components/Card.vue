@@ -1,8 +1,13 @@
 
 <script>
 export default {
-  name: 'Card'
-  
+  name: 'Card',
+
+  props:{
+    name: String,
+    type: String,
+    img: String,
+  }
 }
 </script>
 
@@ -11,14 +16,14 @@ export default {
   <div class="carta">
     <div class="carta-img">
     <!-- IMMAGINE CARTA -->
-      <img src="../assets/img/34541863.jpg" alt="">
+      <img :src="img" :alt="name">
     </div>
     <!-- CONTENITORE TESTO CARTA -->
     <div class="box-info">
       <!-- NOME DELLA CARTA -->
-      <div class="name">Franco Lorem </div>
+      <div class="name">{{name}}</div>
         <!-- TIPOLOGIA -->
-      <div class="type">Alieno</div>
+      <div class="type">{{type}}</div>
     </div>
   </div>
 </template>

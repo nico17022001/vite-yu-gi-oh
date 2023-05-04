@@ -1,6 +1,7 @@
 <script>
 import {store} from '../data/store'
 import CardContainer from './CardContainer.vue';
+import Select from  './Select.vue'
 
 export default {
   name:'Main',
@@ -12,6 +13,7 @@ export default {
   },
   components:{
     CardContainer,
+    Select,
   }
 }
 
@@ -21,6 +23,8 @@ export default {
 <template>
   <!-- CONTENITORE CON SFONDO -->
   <div id="main-wrapper">
+    <!-- SELECT -->
+    <Select/>
     <!-- CONTENITORE BIANCO -->
     <div id="white-container">
       <!-- CONTENITORE DELLA LISTA DI CARDS -->
@@ -41,8 +45,9 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
   }#white-container{
-    margin: 40px 0px;
+    margin: 60px 0px;
     width: 90%;
     height: 90%;
     background-color: white;
